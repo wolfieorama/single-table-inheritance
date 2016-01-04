@@ -1,4 +1,8 @@
 class Animal < ActiveRecord::Base
+  scope :lions, -> { where(race: 'Lion') }
+  scope :meerkat, -> { where (race: 'Meerkat') }
+  scope :wildboar, -> { where (race: 'Wildboar') }
+  
   belongs_to :tribe
   self.inheritance_column = :race
 
