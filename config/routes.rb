@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :animals
+  resources :lions, controller: "animals", type: "Lion"
+  resources :meerkats, controller: "animals", type: "Meerkat"
+  resources :wildboars, controller: "animals", type: "Wildboar"
+
   root 'animals#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
