@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  before_action :set_animal, only: [:show, :edit, :update, :destroy]
   before_action :set_race
   def index
     @animals = race_class.all
@@ -23,6 +24,10 @@ class AnimalsController < ApplicationController
   end
 
   private
+
+  def set_animal
+    @animal = race_class.find(params[:id])
+  end
 
   def set_race
     @race = race
