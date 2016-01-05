@@ -1,1 +1,6 @@
-class Meerkat < Animal; end
+class Meerkat < Animal
+
+  def talk
+    "they even use me in tech"
+  end
+end

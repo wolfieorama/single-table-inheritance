@@ -1,8 +1,8 @@
 class Animal < ActiveRecord::Base
-  scope :lions, -> { where(race: 'Lion') }
-  scope :meerkat, -> { where (race: 'Meerkat') }
-  scope :wildboar, -> { where (race: 'Wildboar') }
-  
+  scope :lion, -> { where(race: "Lion") }
+  scope :meerkat, -> { where(race: "Meerkat") }
+  scope :wildboar, -> { where(race: "Wildboar") }
+
   belongs_to :tribe
   self.inheritance_column = :race
 
@@ -14,7 +14,8 @@ class Animal < ActiveRecord::Base
     %w(Lion WildBoar Meerkat)
   end
 
-  class Lion < Animal; end
-  class Meerkat < Animal; end
-  class Wildboar <Animal; end
+  def talk
+    raise "abstract method"
+  end
+
 end
