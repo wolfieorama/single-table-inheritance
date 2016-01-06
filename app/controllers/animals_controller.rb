@@ -25,6 +25,7 @@ class AnimalsController < ApplicationController
   end
 
   def update
+    binding.pry
     if @animal.update(animal_params)
       redirect_to @animal, notice: "{race} was successfuly created."
     else
